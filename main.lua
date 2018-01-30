@@ -3,7 +3,7 @@
 -- start with gui toolkit
 
 abstk = require "abstk"
-abstk.set_mode(gtk)
+abstk.set_mode(...)
 
 -- abstk works by creating screens and adding them to a wizard
 --[[ wizard consists of these screens
@@ -26,8 +26,23 @@ function welcomeScreen()
   scr:add_label('about', "A simple tool to provision thy servers and manage thine mods.")
   scr:add_label('instructions', "Click Next to begin.")
   --scr:create_button_box('nav', {"Next", "Quit"})
-  return scr
+  welcomeData = scr:run()
+  return welcomeData
 end
-  
+
+function config()
+  local posix = require "lua-posix"
+  local config_file = "kraftalot.txt"
+  --add a section here to walk a directory looking for config file
+end
+
+function serverStatusScreen()
+  local stscrn = abstk.new_screen("Server Status")
+  --add something here to check for a config file
+  --test for server up and accessible
+  --test for running servers
+end
+
+
+
 test1 = welcomeScreen()
-test1:run()
