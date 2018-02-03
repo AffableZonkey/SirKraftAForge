@@ -133,8 +133,8 @@ function finalConfirm(server)
     for modid in unpack(modtypes) do
       scr:create_checkbox(confMod, modtypes, modid, modsConfdtbl(modid,modindx, )
       --not sure what this will return? or how to call really
-
-  
-  
+	end
+  end
+end  
 
 test1 = welcomeScreen()
