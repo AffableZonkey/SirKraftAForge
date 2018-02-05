@@ -120,20 +120,20 @@ end
 function finalConfirm(server)
   local scr = abstk.new_screen("Confirm Settings")
   scr:add_label("When you are happy with all of your settings, click Confirm to continue. To remove a mod or setting, uncheck the item")
-  scr:add_label(server:name)
-  scr:add_label(server:srvtype)
-  scr:add_label(server:version)
-  scr:add_label(server:seed)
-  scr:add_label(server:gameplay)
+  scr:add_label(server:name())
+  scr:add_label(server:srvtype())
+  scr:add_label(server:version())
+  scr:add_label(server:seed())
+  scr:add_label(server:gameplay())
   scr:add_label("Moderators")
-  for gamename in server:moderators do
+  for gamename in server:moderators() do
     scr:add_label(gamename)
   end
-  for modtypes in server:modset do
+  for modtypes in server:modset() do
     for modid in unpack(modtypes) do
-      scr:create_checkbox(confMod, modtypes, modid, modsConfdtbl(modid,modindx, )
+      scr:create_checkbox(confMod, modtypes, modid, modsConfdtbl(modid,modindx))
       --not sure what this will return? or how to call really
-	end
+    end
   end
 end  
 

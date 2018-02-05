@@ -33,6 +33,10 @@ function Toolbox:access(access)
 	self.access = access
 end
 
+function Toolbox:pkgmgr(pkgmgr)
+	self.pkgmgr = pkgmgr
+end
+
 function Toolbox:firewall(firewall)
 	self.firewall = firewall
 end

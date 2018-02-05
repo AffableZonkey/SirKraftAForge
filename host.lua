@@ -26,7 +26,7 @@ Host.__index = Host -- if instance of a host does not exist, use the methods def
 
 setmetatable(Host, {
 	__call = function (cls, ...)
-		return cls.new(...)
+          return cls.new(...)
 	end,
 })
 
@@ -42,18 +42,23 @@ end
 function Host:name(name)
 	self.name = name
 end
+
 function Host:ostype(ostype)
 	self.ostype = ostype
 end
+
 function Host:diskfree(diskfree)
 	self.diskfree = diskfree
 end
+
 function Host:totalram(totalram)
 	self.totalram = totalram
 end
+
 function Host:hyprvisor(hyprvisor)
 	self.hyprvisor = hyprvisor
 end
+
 function Host:userid(userid)
 	self.userid = userid
 end
@@ -65,3 +70,28 @@ end
 function Host:gateWay(gateWay)
 	self.gateWay = gateWay
 end
+
+--[[ toolbox is defined in toolbox.lua]]--
+
+function Host:toolbox(toolbox)
+	self.toolbox = toolbox
+end
+
+
+
+--[[ just testing the class
+--
+local testhost = Host("testhost")
+testhost:ostype("freebsd")
+testhost:diskfree(19)
+testhost:totalram(6)
+testhost:hyprvisor("qjail")
+testhost:userid("dude")
+testhost:ipAddr("172.16.0.19")
+testhost:gateWay("172.16.0.1")
+for k, v in pairs(testhost) do;
+  print(k, v)
+end
+  ]]--
+
+
