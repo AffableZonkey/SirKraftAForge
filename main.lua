@@ -64,6 +64,8 @@ end
 function createSrvr()
   local scr = abstk.new_screen("Create Server")
   scr:add_label("It doesn't look like you have a server set up yet. What kind of server do you want to run? Please make a selection.")
+  scr:add_text_input('hostname', 'Enter the name or ip address of the server.')
+  scr:add_label('Examples: 192.168.1.100, localhost, OR yourdomain.com')
   scr:create_combobox('initSrvr', 'Server Type', {'Forge', 'Spigot', 'Cuberite'}, 1, srvrInit(initSrvr, ofType, typeIndex))
   scr:create_combobox('srvrVer', 'Release Version', {'1.12.2', '1.11', '1.7.10'}, 1, mcRelease(srvrVer, relnum, relIndex))
   scr:create_button_box('nav', {'Create', 'Back', 'Quit'})
